@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">myAppChat</string>
+    <string name="Buscar">Buscar</string>
+    <string name="item1">Nuevo grupo</string>
+    <string name="item2">Nueva difusión</string>
+    <string name="item3">ChatApp Web</string>
+    <string name="item4">Mensajes destacados</string>
+    <string name="item5">Ajustes</string>
 </resources>
