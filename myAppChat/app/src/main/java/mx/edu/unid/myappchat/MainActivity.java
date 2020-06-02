@@ -7,8 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         adaptadorConversacion = new RecyclerViewAdaptador(obtenerConversaciones());
         recyclerViewConversacion.setAdapter(adaptadorConversacion);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Insertar aqui codigo para boton flotante", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+            }
+        });
     }
 
     //metodo para mostrar y ocultar el menu
