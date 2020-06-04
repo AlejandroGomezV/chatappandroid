@@ -44,14 +44,32 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:text="TextView"
-                    android:textSize="26sp" />
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/toContacto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="TextView"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/mensaje"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    android:textSize="18sp" />
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="TextView"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -11,27 +11,51 @@ import android.view.View;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewConversacion;
     private RecyclerViewAdaptador adaptadorConversacion;
+
+    FirebaseFirestore mFirestore;
+    ConversacionAdapter mAdapter;
+
+    String to = "";
+    String from = "";
+    String message = "";
+    long timestamp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mFirestore = FirebaseFirestore.getInstance();
+
         recyclerViewConversacion = (RecyclerView)findViewById(R.id.recyclerConversacion);
         recyclerViewConversacion.setLayoutManager(new LinearLayoutManager(this));
 
-        adaptadorConversacion = new RecyclerViewAdaptador(obtenerConversaciones());
-        recyclerViewConversacion.setAdapter(adaptadorConversacion);
+        Query query = mFirestore.collection("chat");
+
+        FirestoreRecyclerOptions<ConversacionModelo> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ConversacionModelo>()
+                .setQuery(query,ConversacionModelo.class).build();
+
+        mAdapter = new ConversacionAdapter(firestoreRecyclerOptions);
+        mAdapter.notifyDataSetChanged();
+        recyclerViewConversacion.setAdapter(mAdapter);
+        //adaptadorConversacion = new RecyclerViewAdaptador(obtenerConversaciones());
+        //recyclerViewConversacion.setAdapter(adaptadorConversacion);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(v, "Insertar aqui codigo para boton flotante", Snackbar.LENGTH_LONG).setAction("Action",null).show();
             }
         });
+
+        //obtenerConversacionesFromFirebase();
     }
 
     //metodo para mostrar y ocultar el menu
@@ -75,10 +101,38 @@ public class MainActivity extends AppCompatActivity {
     public List<ConversacionModelo> obtenerConversaciones(){
         List<ConversacionModelo> conversacion = new ArrayList<>();
         //items de la lista
-        conversacion.add(new ConversacionModelo("Erick","Mensaje de prueba 1",R.drawable.ic_launcher_background));
-        conversacion.add(new ConversacionModelo("Tomas","Mensaje de prueba 2",R.drawable.ic_launcher_background));
-        conversacion.add(new ConversacionModelo("Hugo","Mensaje de prueba 3",R.drawable.ic_launcher_background));
+        //conversacion.add(new ConversacionModelo("Erick","Mensaje de prueba 1",R.drawable.ic_launcher_background));
+        //conversacion.add(new ConversacionModelo("Tomas","Mensaje de prueba 2",R.drawable.ic_launcher_background));
+        //conversacion.add(new ConversacionModelo("Hugo","Mensaje de prueba 3",R.drawable.ic_launcher_background));
 
         return conversacion;
+    }
+
+    private void obtenerConversacionesFromFirebase(){
+        mFirestore.collection("chat").document("SlMhepfrhpilahMh70V4").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    to = documentSnapshot.getString("to");
+                    from = documentSnapshot.getString("from");
+                    message = documentSnapshot.getString("message");
+                    //long timestamp = documentSnapshot.getLong("timestamp");
+                }
+            }
+        });
+
+        //Snackbar.make(MainActivity.this, from, Snackbar.LENGTH_LONG).setAction("Action",null).show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAdapter.stopListening();
     }
 }

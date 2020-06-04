@@ -41,9 +41,9 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.contacto.setText(conversacionLista.get(position).getContacto());
-        holder.mensaje.setText(conversacionLista.get(position).getMensaje());
-        holder.fotoContacto.setImageResource(conversacionLista.get(position).getImgContacto());
+        holder.contacto.setText("From: "+conversacionLista.get(position).getFrom());
+        holder.mensaje.setText("Mensaje: "+conversacionLista.get(position).getMessage());
+        //holder.fotoContacto.setImageResource(conversacionLista.get(position).getImgContacto());
     }
 
     @Override
