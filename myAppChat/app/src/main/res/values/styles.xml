@@ -7,4 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MiBotonRaise" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorBlanco</item>
+
+    </style>
+
 </resources>

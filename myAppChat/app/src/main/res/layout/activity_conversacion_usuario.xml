@@ -9,6 +9,31 @@
     android:padding="5sp"
     android:orientation="vertical">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="Horizontal">
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/common_google_signin_btn_icon_dark">
+        </ImageView>
+        <TextView
+            android:id="tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hugo Alberto"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMensajes"
         android:layout_width="match_parent"
@@ -36,7 +61,8 @@
             android:id="@+id/btnEnviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enviar">
+            android:hint="Enviar"
+            >
 
         </Button>
     </LinearLayout>
