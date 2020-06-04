@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,11 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
         Query query = mFirestore.collection("chat");
 
-        FirestoreRecyclerOptions<ConversacionModelo> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ConversacionModelo>()
+        final FirestoreRecyclerOptions<ConversacionModelo> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ConversacionModelo>()
                 .setQuery(query,ConversacionModelo.class).build();
 
         mAdapter = new ConversacionAdapter(firestoreRecyclerOptions);
         mAdapter.notifyDataSetChanged();
+        mAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(),"Seleccion de un elemento",Toast.LENGTH_SHORT).show();
+                abrirPantallaConversacion(v);
+            }
+        });
         recyclerViewConversacion.setAdapter(mAdapter);
         //adaptadorConversacion = new RecyclerViewAdaptador(obtenerConversaciones());
         //recyclerViewConversacion.setAdapter(adaptadorConversacion);
@@ -66,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //obtenerConversacionesFromFirebase();
+    }
+
+    public void abrirPantallaConversacion(View view){
+        Intent nextActivity = new Intent(this, conversacion_usuario.class);
+        startActivity(nextActivity);
     }
 
     //metodo para mostrar y ocultar el menu

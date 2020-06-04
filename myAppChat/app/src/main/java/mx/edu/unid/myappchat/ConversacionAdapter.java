@@ -13,8 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class ConversacionAdapter extends FirestoreRecyclerAdapter<ConversacionModelo, ConversacionAdapter.ViewHolder> {
+public class ConversacionAdapter
+        extends FirestoreRecyclerAdapter<ConversacionModelo, ConversacionAdapter.ViewHolder>
+        implements View.OnClickListener {
 
+    private View.OnClickListener listener;
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
@@ -38,7 +41,19 @@ public class ConversacionAdapter extends FirestoreRecyclerAdapter<ConversacionMo
     public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_conversacion, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+        view.setOnClickListener(this);
         return viewHolder;
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(listener!=null){
+            listener.onClick(v);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
