@@ -5,6 +5,7 @@
     <item
         android:id="@+id/buscar"
         android:icon="@drawable/ic_search_black_24dp"
+        android:iconTint="@color/colorBlanco"
         android:title="@string/Buscar"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
