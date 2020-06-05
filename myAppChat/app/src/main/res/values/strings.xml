@@ -6,4 +6,9 @@
     <string name="item3">ChatApp Web</string>
     <string name="item4">Mensajes destacados</string>
     <string name="item5">Ajustes</string>
+    <string name="itemConv1">Ver Contacto</string>
+    <string name="itemConv2">Archivos, enlaces y docs</string>
+    <string name="itemConv3">Buscar</string>
+    <string name="itemConv4">Silenciar notificaciones</string>
+    <string name="itemConv5">Fondo</string>
 </resources>
