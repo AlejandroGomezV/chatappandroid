@@ -48,10 +48,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewConversacion = (RecyclerView)findViewById(R.id.recyclerConversacion);
         recyclerViewConversacion.setLayoutManager(new LinearLayoutManager(this));
 
-        Query query = mFirestore.collection("chat");
+        Query query = mFirestore.collection("chat")
+                .orderBy("timestamp", Query.Direction.DESCENDING);
                 /*.whereGreaterThanOrEqualTo("from", MyUser)
-                .whereLessThanOrEqualTo("to", MyUser)
-                .orderBy("timestamp", Query.Direction.DESCENDING);*/
+                .whereLessThanOrEqualTo("to", MyUser)*/
+
 
         final FirestoreRecyclerOptions<ConversacionModelo> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ConversacionModelo>()
                 .setQuery(query,ConversacionModelo.class).build();

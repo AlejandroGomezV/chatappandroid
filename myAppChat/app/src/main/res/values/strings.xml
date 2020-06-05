@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">myAppChat</string>
+    <string name="app_name">Chat app</string>
     <string name="Buscar">Buscar</string>
     <string name="item1">Nuevo grupo</string>
     <string name="item2">Nueva difusión</string>
