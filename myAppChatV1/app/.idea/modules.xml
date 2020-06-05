@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="myAppChat/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-601278663/myAppChat.iml" filepath="$PROJECT_DIR$/.idea/modules/-601278663/myAppChat.iml" group="myAppChat" />
-    </modules>
-  </component>
-</project>
