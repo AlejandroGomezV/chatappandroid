@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore mFirestore;
     ConversacionAdapter mAdapter;
 
+    String MyUser = "Alex";
     String to = "";
     String from = "";
     String message = "";
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewConversacion = (RecyclerView)findViewById(R.id.recyclerConversacion);
         recyclerViewConversacion.setLayoutManager(new LinearLayoutManager(this));
 
-        Query query = mFirestore.collection("chat");
+        Query query = mFirestore.collection("chat").whereGreaterThanOrEqualTo("from", MyUser)
+                .whereLessThanOrEqualTo("to", MyUser)
+                .orderBy("timestamp", Query.Direction.DESCENDING);
 
         final FirestoreRecyclerOptions<ConversacionModelo> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ConversacionModelo>()
                 .setQuery(query,ConversacionModelo.class).build();

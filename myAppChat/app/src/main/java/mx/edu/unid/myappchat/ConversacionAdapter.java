@@ -13,6 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class ConversacionAdapter
         extends FirestoreRecyclerAdapter<ConversacionModelo, ConversacionAdapter.ViewHolder>
         implements View.OnClickListener {
@@ -33,7 +37,7 @@ public class ConversacionAdapter
         viewHolder.textViewContacto.setText("From: "+conversacionModelo.getFrom());
         viewHolder.textViewMensaje.setText("Message: "+conversacionModelo.getMessage());
         viewHolder.textViewTo.setText("To: "+conversacionModelo.getTo());
-        viewHolder.textViewFecha.setText("TimeStamp: "+conversacionModelo.getTimestamp());
+        viewHolder.textViewFecha.setText("TimeStamp: "+ conversacionModelo.getTimestamp());
         viewHolder.imageViewConversacion.setImageResource(R.drawable.ic_launcher_background);
     }
 
