@@ -41,24 +41,26 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_black"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingBottom="5dp"
                     android:text="TextView"
-                    android:textSize="16sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/toContacto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="TextView"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/mensaje"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
                     android:fontFamily="@font/roboto_thin_italic"
                     android:text="TextView"
                     android:textSize="12sp" />
@@ -68,8 +70,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_thin"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="5dp"
                     android:text="TextView"
                     android:textSize="12sp" />
             </LinearLayout>
