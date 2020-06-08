@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detalle_conversacion"
+    android:padding="5sp"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/buttonEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icono_emoji"
+            android:background="@drawable/boton_redondo"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Escribe un mensaje"
+            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/buttonFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icono_file"
+            android:background="@drawable/boton_redondo"
+            android:layout_gravity="center"/>
+        <ImageButton
+            android:id="@+id/buttonCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icono_camera"
+            android:background="@drawable/boton_redondo"
+            android:layout_gravity="center"/>
+        <ImageButton
+            android:id="@+id/buttonMic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icono_mic"
+            android:background="@drawable/boton_redondo_verde"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

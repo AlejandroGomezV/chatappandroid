@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/back"
+        android:icon="@drawable/icono_back"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/icono_videocamera"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/icono_call"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item android:title="Ver contacto" />
+    <item android:title="Archivos, enlaces y docs" />
+    <item android:title="Buscar" />
+    <item android:title="Silenciar notificaciones" />
+    <item android:title="Fondo" />
+    <item android:title="Más" >
+        <menu >
+            <item android:title="Reportar" />
+            <item android:title="Bloquear" />
+            <item android:title="Vaciar chat" />
+            <item android:title="Exportar chat" />
+            <item android:title="Crear acceso directo" />
+        </menu>
+    </item>
+</menu>
