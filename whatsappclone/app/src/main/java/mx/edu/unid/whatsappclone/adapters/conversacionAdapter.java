@@ -37,15 +37,38 @@ public class conversacionAdapter extends FirestoreRecyclerAdapter<ConversacionMo
         Log.i("Info",conversacion.getFrom());
         if(conversacion.getFrom().equals(miusuario)) {
             viewHolder.textViewContacto.setText(conversacion.getTo());
+            if(conversacion.getTo().equals("Erick")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.erick);
+            }
+            else if(conversacion.getTo().equals("Edgardo")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.edgardo);
+            }
+            else if(conversacion.getTo().equals("Tomas")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.tomas);
+            }
+            else{
+                viewHolder.imageViewContacto.setImageResource(R.drawable.usuario);
+            }
         }
         else {
             viewHolder.textViewContacto.setText(conversacion.getFrom());
+            if(conversacion.getFrom().equals("Erick")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.erick);
+            }
+            else if(conversacion.getFrom().equals("Edgardo")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.edgardo);
+            }
+            else if(conversacion.getFrom().equals("Tomas")){
+                viewHolder.imageViewContacto.setImageResource(R.drawable.tomas);
+            }
+            else{
+                viewHolder.imageViewContacto.setImageResource(R.drawable.usuario);
+            }
         }
         viewHolder.textViewFecha.setText("02:04 p.m.");
         viewHolder.textViewMensaje.setText(conversacion.getMessage());
         int numnotificaciones = (int) (Math.random()*10)+1;
         viewHolder.textViewNotificacion.setText(String.valueOf(numnotificaciones));
-        viewHolder.imageViewContacto.setImageResource(R.drawable.usuario);
     }
 
     @NonNull
