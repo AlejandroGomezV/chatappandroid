@@ -47,6 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_black"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="TextView"
@@ -57,9 +58,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="TextView"
-                        android:textSize="18sp"
-                        android:textAlignment="viewEnd"/>
+                        android:textAlignment="viewEnd"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -72,6 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_light_italic"
                         android:text="TextView"
                         android:textSize="18sp" />
 
@@ -80,9 +83,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
                         android:text="TextView"
-                        android:textSize="18sp"
-                        android:textAlignment="viewEnd"/>
+                        android:textAlignment="viewEnd"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
             </LinearLayout>
