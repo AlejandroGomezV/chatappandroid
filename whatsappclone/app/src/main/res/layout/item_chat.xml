@@ -9,62 +9,107 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
 
-            <TextView
-                android:id="@+id/mensajecontacto"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#DDD9D9"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp"
-                android:text="TextView"
-                android:textSize="14sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent">
 
-            <TextView
-                android:id="@+id/horacontacto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#DDD9D9"
-                android:paddingTop="14dp"
-                android:paddingBottom="11dp"
-                android:text="TextView"
-                android:textSize="10sp"
-                android:textAlignment="textEnd"/>
+                <TextView
+                    android:id="@+id/mensajecontacto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#DDD9D9"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="TextView"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/mensajeme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#8BC34A"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp"
-                android:text="TextView"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/horacontacto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#DDD9D9"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="11dp"
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    android:textSize="10sp" />
 
-            <TextView
-                android:id="@+id/horame"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#8BC34A"
-                android:paddingTop="14dp"
-                android:paddingBottom="11dp"
-                android:text="TextView"
-                android:textSize="10sp"
-                android:textAlignment="textEnd"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mensajeme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#8BC34A"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="TextView"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/horame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#8BC34A"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="11dp"
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 </LinearLayout>

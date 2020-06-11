@@ -34,14 +34,11 @@ public class detalle_conversacion extends AppCompatActivity {
 
     public List<ChatModelo> obtenerChats(){
         List<ChatModelo> chat =new ArrayList<>();
-        chat.add(new ChatModelo("Hola","12:04 p.m.","",""));
-        chat.add(new ChatModelo("","","Hola que tal?","12:10 p.m."));
-        chat.add(new ChatModelo("Bien, aquí con la tarea","12:34 p.m.","",""));
-        chat.add(new ChatModelo("","","Muy bien","13:10 p.m."));
-        chat.add(new ChatModelo("Ya te salio?","14:04 p.m.","",""));
-        chat.add(new ChatModelo("","","Aun me faltan detalle","15:10 p.m."));
-        chat.add(new ChatModelo("Muy bien","16:04 p.m.","",""));
-        chat.add(new ChatModelo("","","y a ti?","17:10 p.m."));
+        chat.add(new ChatModelo("Hola","12:04 p.m.","Hola que tal?","12:10 p.m."));
+        chat.add(new ChatModelo("Bien, aquí con la tarea","12:34 p.m.","Muy bien","13:10 p.m."));
+        chat.add(new ChatModelo("Ya te salio?","14:04 p.m.","Aun me faltan detalle","15:10 p.m."));
+        chat.add(new ChatModelo("Muy bien","16:04 p.m.","y a ti?","17:10 p.m."));
+        chat.add(new ChatModelo("Estamos trabajando con los views","17:50 p.m.","Excelente","18:00 p.m."));
 
         return chat;
     }
