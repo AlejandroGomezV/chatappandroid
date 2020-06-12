@@ -3,12 +3,19 @@ package mx.edu.unid.whatsappclone.controlador;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import mx.edu.unid.whatsappclone.R;
+import mx.edu.unid.whatsappclone.adapters.LlamadasRecyclerViewAdaptadpr;
+import mx.edu.unid.whatsappclone.models.LlamadasModelo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,10 @@ public class Llamadas extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    //Se crea instancia del RecyclerView y del Adaptador de Llamadas
+    RecyclerView recyclerViewLlamadas;
+    LlamadasRecyclerViewAdaptadpr adaptadorLlamadas;
 
     public Llamadas() {
         // Required empty public constructor
@@ -55,12 +66,36 @@ public class Llamadas extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_llamadas, container, false);
+        View vista = inflater.inflate(R.layout.fragment_llamadas, container, false);
+
+        recyclerViewLlamadas = vista.findViewById(R.id.recyclerLlamadas);
+        recyclerViewLlamadas.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adaptadorLlamadas=new LlamadasRecyclerViewAdaptadpr(obtenerLlamadas());
+        recyclerViewLlamadas.setAdapter(adaptadorLlamadas);
+
+        return vista;
+
     }
+
+    public List<LlamadasModelo> obtenerLlamadas(){
+        List<LlamadasModelo> llamada=new ArrayList<>();
+        llamada.add(new LlamadasModelo("Edgardo","10/06/2020 14:30",R.drawable.edgardo,R.drawable.entrada,R.drawable.telefono));
+        llamada.add(new LlamadasModelo("Erick","09/06/2020 08:10",R.drawable.erick,R.drawable.salida,R.drawable.video));
+        llamada.add(new LlamadasModelo("Tomas","29/05/2020 13:50",R.drawable.tomas,R.drawable.entrada,R.drawable.video));
+
+        return llamada;
+
+    }
+
+
+
+
 }
