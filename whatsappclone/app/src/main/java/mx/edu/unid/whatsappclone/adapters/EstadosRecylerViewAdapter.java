@@ -46,7 +46,7 @@ public class EstadosRecylerViewAdapter extends RecyclerView.Adapter<EstadosRecyl
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.nombre.setText(estadosLista.get(position).getNombre());
-        holder.fecha.setText(estadosLista.get(position).getNombre());
+        holder.fecha.setText(estadosLista.get(position).getFecha());
         holder.imgEstado.setImageResource(estadosLista.get(position).getImgEstado());
     }
 
