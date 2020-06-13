@@ -42,7 +42,7 @@ public class EstadosRecylerViewAdapter extends RecyclerView.Adapter<EstadosRecyl
         ViewHolder viewHolder=new ViewHolder(view);
         return viewHolder;
     }
-
+//
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.nombre.setText(estadosLista.get(position).getNombre());
